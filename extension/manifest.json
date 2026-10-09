@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "超星讨论区数学助手",
+  "description": "在超星讨论区话题页一键生成数学题解答（ecnu-max 视觉模型识图作答）",
+  "version": "1.0.0",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://groupweb.chaoxing.com/*",
+    "https://*.chaoxing.com/*",
+    "https://*.cldisk.com/*",
+    "https://chat.ecnu.edu.cn/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://groupweb.chaoxing.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "超星数学助手设置"
+  }
+}
