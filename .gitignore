@@ -1,0 +1,11 @@
+# 敏感配置（含 API key / Cookie / 课程参数）
+config.py
+
+# 运行时数据
+__pycache__/
+*.pyc
+*.log
+
+# 本地状态与图片（如放在仓库目录内）
+handled.json
+images/
